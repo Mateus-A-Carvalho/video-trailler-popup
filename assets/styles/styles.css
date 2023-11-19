@@ -69,7 +69,6 @@ a#btn{
   border-radius: 9999px;
   border: none;
   outline: none;
-  text-align: center;
   text-decoration: none;
   box-shadow: var(--box-shaddow);
   background: var(--btn-black-bg);
@@ -86,16 +85,16 @@ a#btn::before {
   width: 0;
   height: 0;
   border-radius: 50%;
+  background: var(--btn-black-color);
   top: var(--yPos);
   left: var(--xPos);
   transform: translate(-50%, -50%);
-  transition: all .5s
+  transition: width .4s, height .4s;
 }
 
 a#btn:hover::before {
   width: 45rem;
   height: 45rem;
-  background: var(--btn-black-color);
 }
 
 a#btn:hover:has(span) span {
@@ -103,6 +102,7 @@ a#btn:hover:has(span) span {
 }
 
 span {
+  position: relative;
   z-index: 5;
 }
 
