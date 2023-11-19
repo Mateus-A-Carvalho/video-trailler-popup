@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Fira+Sans+Condensed:ital@0;1&family=Kurale&family=Lato:ital,wght@0,700;1,700&family=Nanum+Gothic&family=Playpen+Sans:wght@400;700&family=Raleway:ital,wght@0,700;1,800&family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&family=Fira+Sans+Condensed:ital@0;1&family=Kurale&family=Lato:ital,wght@0,700;1,700&family=Nanum+Gothic&family=Playpen+Sans:wght@400;700&family=Raleway:ital,wght@0,700;1,800&family=Roboto+Slab:wght@500&display=swap');
+
+
+:root {
+  --bdrs: 1rem;
+  --box-shaddow: 0 .3rem .8rem rgba(0, 0, 0, .35);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,4 +21,44 @@ html {
 
 body {
   height: 100%;
+  font-size: 1.8rem;
+  overflow: hidden;
+  background-image: url("../img/bg-01.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+
+section.section__folder {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 70vw;
+  border: 1rem solid rgba(29, 29, 29, .85);
+  gap: 1rem;
+  background-color: rgba(230, 230, 230, .85);
+  border-radius: var(--bdrs);
+}
+
+.heading__folder {
+  font-size: 3em;
+  margin: 0 auto;
+  text-align: left;
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.description {
+  padding: 1rem;
+  font-family: 'Kurale', serif;
+}
+
+button {
+  width: 20rem;
+  height: 5rem;
+  border-radius: 9999px;
+  border: none;
+  outline: none;
+  box-shadow: var(--box-shaddow);
 }
