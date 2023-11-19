@@ -5,6 +5,12 @@
 :root {
   --bdrs: 1rem;
   --box-shaddow: 0 .3rem .8rem rgba(0, 0, 0, .35);
+  /* BTN COLORS */
+  --btn-black-bg: rgba(29, 29, 29, 1);
+  --btn-black-color: rgba(230, 230, 230, 1);
+  /* BTN COLORS */
+  --xPos: 50%;
+  --yPos: 50%;
 }
 
 * {
@@ -21,11 +27,11 @@ html {
 
 body {
   height: 100%;
-  font-size: 1.8rem;
-  overflow: hidden;
+  font-size: 1.6rem;
+  overflow-y: scroll;
   background-image: url("../img/bg-01.jpg");
   background-size: cover;
-  overflow: hidden;
+  background-repeat: no-repeat;
 }
 
 section.section__folder {
@@ -54,11 +60,49 @@ section.section__folder {
   font-family: 'Kurale', serif;
 }
 
-button {
+a#btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 20rem;
   height: 5rem;
   border-radius: 9999px;
   border: none;
   outline: none;
+  text-align: center;
+  text-decoration: none;
   box-shadow: var(--box-shaddow);
+  background: var(--btn-black-bg);
+  color: var(--btn-black-color);
+  font-weight: bolder;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
+
+a#btn::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  top: var(--yPos);
+  left: var(--xPos);
+  transform: translate(-50%, -50%);
+  transition: all .5s
+}
+
+a#btn:hover::before {
+  width: 45rem;
+  height: 45rem;
+  background: var(--btn-black-color);
+}
+
+a#btn:hover:has(span) span {
+  color: var(--btn-black-bg);
+}
+
+span {
+  z-index: 5;
+}
+
