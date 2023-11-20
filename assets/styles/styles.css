@@ -11,6 +11,8 @@
   /* BTN COLORS */
   --xPos: 50%;
   --yPos: 50%;
+  --transition-time: .45s;
+  --trailer-transition-time: .25s
 }
 
 * {
@@ -89,7 +91,17 @@ a#btn::before {
   top: var(--yPos);
   left: var(--xPos);
   transform: translate(-50%, -50%);
-  transition: width .4s, height .4s;
+  transition: width var(--transition-time), height var(--transition-time);
+}
+
+a#btn:hover {
+  transform: scale(1.05);
+  transition: all var(--transition-time);
+}
+
+a#btn:active {
+  transform: scale(.95);
+  transition: all var(--transition-time);
 }
 
 a#btn:hover::before {
@@ -106,3 +118,35 @@ span {
   z-index: 5;
 }
 
+.trailer {
+  visibility: hidden;
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  transition: var(--trailer-transition-time);
+  animation:  fadeIn .4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  } 
+}
