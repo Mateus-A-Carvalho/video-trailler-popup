@@ -16,7 +16,7 @@ btnEl.addEventListener("click", () => {
 function play(element) {
   element.play();
   element.style.visibility = "visible"
-  element.style.width = "90vw"
-  element.style.height = "90vw"
+  element.style.width = "85vw"
+  element.style.height = "100vh"
   element.style.zIndex = "10"
 }
