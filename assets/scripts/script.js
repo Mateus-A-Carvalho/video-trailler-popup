@@ -15,7 +15,6 @@ bodyEl.addEventListener("click", (e) => {
   if(event === bodyEl) return reloadTrailer(trailerEl);
 })
 
-
 btnEl.addEventListener("click", () => {
   playTrailer(trailerEl);
 })
@@ -24,8 +23,9 @@ function playTrailer(element) {
   element.play();
   element.style.visibility = "visible"
   element.style.width = "85vw"
-  element.style.height = "100vh"
+  element.style.height = "85vh"
   element.style.zIndex = "10"
+  element.classList.add('fade-in');
 }
 
 function reloadTrailer(element) {

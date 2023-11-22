@@ -128,25 +128,34 @@ span {
   width: 90vw;
   height: 90vh;
   transition: var(--trailer-transition-time);
-  animation:  fadeIn .4s ease-in-out;
 }
 
-@keyframes fadeIn {
+.close-btn {
+  width: 10rem;
+  height: 10rem;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.fade-in {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
 }
-
-@keyframes fadeOut {
+@keyframes fade-in {
   0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
-
-  100% {
-    opacity: 0;
-  } 
 }
