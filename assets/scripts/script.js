@@ -1,5 +1,6 @@
 const btnEl = document.querySelector('#btn');
 const trailerEl = document.querySelector('#trailer');
+const bodyEl = document.querySelector('body')
 
 btnEl.addEventListener("mouseover", (e) => {
   let xPos = (e.pageX - btnEl.offsetLeft);
@@ -9,14 +10,26 @@ btnEl.addEventListener("mouseover", (e) => {
   btnEl.style.setProperty("--yPos", `${yPos}px`)
 })
 
-btnEl.addEventListener("click", () => {
-  play(trailerEl);
+bodyEl.addEventListener("click", (e) => {
+  let event = e.target
+  if(event === bodyEl) return reloadTrailer(trailerEl);
 })
 
-function play(element) {
+
+btnEl.addEventListener("click", () => {
+  playTrailer(trailerEl);
+})
+
+function playTrailer(element) {
   element.play();
   element.style.visibility = "visible"
   element.style.width = "85vw"
   element.style.height = "100vh"
   element.style.zIndex = "10"
+}
+
+function reloadTrailer(element) {
+  element.pause();
+  element.currentTime = 0;
+  element.style.visibility = "hidden"
 }
