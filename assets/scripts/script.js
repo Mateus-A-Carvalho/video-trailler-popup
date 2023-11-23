@@ -1,6 +1,8 @@
 const btnEl = document.querySelector('#btn');
 const trailerEl = document.querySelector('#trailer');
-const bodyEl = document.querySelector('body')
+const bodyEl = document.querySelector('body');
+const closeTrailerEl = document.querySelector('#close-btn');
+const trailerWrapperEl = document.querySelector(".trailer-wrapper");
 
 btnEl.addEventListener("mouseover", (e) => {
   let xPos = (e.pageX - btnEl.offsetLeft);
@@ -16,10 +18,11 @@ bodyEl.addEventListener("click", (e) => {
 })
 
 btnEl.addEventListener("click", () => {
+  trailerWrapperEl.style.display = "block";
   playTrailer(trailerEl);
 })
 
-function playTrailer(element) {
+function playTrailer(element, closeEl) {
   element.play();
   element.style.visibility = "visible"
   element.style.width = "85vw"
